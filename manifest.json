@@ -1,0 +1,16 @@
+{
+  "name": "Peaceful YouTube",
+  "description": "Hide bad button in YouTube",
+  "version": "1.0",
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.youtube.com/w*"
+      ],
+      "js": [
+        "content_scripts.js"
+      ]
+    }
+  ]
+}
