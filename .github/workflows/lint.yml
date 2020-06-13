@@ -9,4 +9,4 @@ jobs:
     steps:
       - run: npm install
       - name: lint
-        run: npx eslint ./
+        run: npm run-script lint
