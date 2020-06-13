@@ -1,7 +1,7 @@
-// ページ読み込みイベント
+// page loading event
 addEventListener("load", removeDislikeButton, false);
 
-// ページ内遷移イベント
+// page transition event
 chrome.runtime.onMessage.addListener((request) => {
   if (request.type === "onUpdated") {
     removeDislikeButton();
@@ -16,11 +16,11 @@ function removeDislikeButton() {
       ?.getElementsByTagName("ytd-toggle-button-renderer");
     if (buttons != null && buttons.length >= 2) {
       buttons[1].remove();
-      // sentiment が残っている場合は削除する
+      // Remove the line below like/dislike buttons, if it remains.
       document.getElementById("sentiment")?.remove();
       clearInterval(jsInitCheckTimer);
     }
   };
-  // delay の値はお好みで
+  // Set delay param as you like.
   const jsInitCheckTimer = setInterval(jsLoaded, 200);
 }
