@@ -4,9 +4,10 @@ on: [push]
 
 jobs:
   lint:
-    runs-on: macos-10.15
+    runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v2
       - run: npm install
       - name: lint
         run: npm run-script lint
