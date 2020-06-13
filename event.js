@@ -1,7 +1,5 @@
-chrome.tabs.onUpdated.addListener(
-    (tabId, changeInfo, tab) => {
-        if (changeInfo.url) {
-            chrome.tabs.sendMessage(tabId, { "type": "onUpdated" }, null)
-        }
-    }
-)
+chrome.tabs.onUpdated.addListener((tabId, changeInfo) => {
+  if (changeInfo.url) {
+    chrome.tabs.sendMessage(tabId, { type: "onUpdated" }, null);
+  }
+});
