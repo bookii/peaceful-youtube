@@ -9,8 +9,15 @@ chrome.runtime.onMessage.addListener((request) => {
 });
 
 function removeDislikeButton() {
+  var counter = 0;
   const jsLoaded = () => {
-    console.log("try");
+    // prevent infinite loops
+    if (counter > 20) {
+      console.log("Failed to remove dislike button.");
+      clearInterval(jsInitCheckTimer);
+    }
+
+    counter += 1;
     const buttons = document
       .getElementById("top-level-buttons")
       ?.getElementsByTagName("ytd-toggle-button-renderer");
@@ -21,6 +28,7 @@ function removeDislikeButton() {
       clearInterval(jsInitCheckTimer);
     }
   };
+
   // Set delay param as you like.
   const jsInitCheckTimer = setInterval(jsLoaded, 200);
 }
