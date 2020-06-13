@@ -1,16 +1,25 @@
 {
   "name": "Peaceful YouTube",
-  "description": "Hide bad button in YouTube",
+  "description": "Hide dislike button in YouTube",
   "version": "1.0",
   "manifest_version": 2,
+  "background": {
+    "scripts": [
+      "event.js"
+    ],
+    "persistent": false
+  },
   "content_scripts": [
     {
       "matches": [
-        "https://*.youtube.com/w*"
+        "https://*.youtube.com/watch*"
       ],
       "js": [
-        "content_scripts.js"
+        "contentScript.js"
       ]
     }
+  ],
+  "permissions": [
+    "tabs"
   ]
 }
