@@ -4,7 +4,7 @@
   "description": "",
   "main": "background.js",
   "scripts": {
-    "lint": "eslint --ext .js ./"
+    "lint": "eslint --ext .js ."
   },
   "author": "",
   "license": "ISC",
