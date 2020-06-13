@@ -1,6 +1,6 @@
 {
   "name": "Peaceful YouTube",
-  "description": "Hide dislike button in YouTube",
+  "description": "Remove dislike button in YouTube",
   "version": "1.0",
   "manifest_version": 2,
   "background": {
