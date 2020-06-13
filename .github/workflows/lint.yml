@@ -1,3 +1,5 @@
+# ref: https://help.github.com/ja/actions/configuring-and-managing-workflows/caching-dependencies-to-speed-up-workflows
+
 name: Lint
 
 on: push
