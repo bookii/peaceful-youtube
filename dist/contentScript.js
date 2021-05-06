@@ -19,7 +19,8 @@ function removeDislikeButton() {
 
     counter += 1;
     const buttons = document
-      .getElementById("top-level-buttons")
+      .getElementsByTagName("ytd-video-primary-info-renderer")
+      ?.item("top-level-buttons")
       ?.getElementsByTagName("ytd-toggle-button-renderer");
     if (buttons != null && buttons.length >= 2) {
       buttons[1].remove();
