@@ -22,8 +22,8 @@ function removeDislikeButton() {
       .getElementsByTagName("ytd-video-primary-info-renderer")
       ?.item("top-level-buttons")
       ?.getElementsByTagName("ytd-toggle-button-renderer");
-    if (buttons != null && buttons.length >= 2) {
-      buttons[1].remove();
+    if (buttons != null && buttons.length >= 4) {
+      buttons[3].remove();
       // Remove the line below like/dislike buttons, if it remains.
       document.getElementById("sentiment")?.remove();
       clearInterval(jsInitCheckTimer);
