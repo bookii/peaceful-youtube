@@ -18,14 +18,17 @@ function removeDislikeButton() {
     }
 
     counter += 1;
-    const buttons = document
+    const infoContents = document.getElementById("info-contents");
+    const buttons = infoContents
       .getElementsByTagName("ytd-video-primary-info-renderer")
       ?.item("top-level-buttons")
       ?.getElementsByTagName("ytd-toggle-button-renderer");
     if (buttons != null && buttons.length >= 2) {
       buttons[1].remove();
       // Remove the line below like/dislike buttons, if it remains.
-      document.getElementById("sentiment")?.remove();
+      infoContents
+        .getElementsByTagName("ytd-sentiment-bar-renderer")[0]
+        .remove();
       clearInterval(jsInitCheckTimer);
     }
   };
